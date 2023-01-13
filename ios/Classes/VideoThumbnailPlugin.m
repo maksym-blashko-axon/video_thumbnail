@@ -65,7 +65,7 @@
             if(path && [path isKindOfClass:[NSString class]] && path.length>0) {
                 NSString *lastPart = [thumbnail lastPathComponent];
                 thumbnail = [NSURL fileURLWithPath:path];
-                if( ![[thumbnail pathExtension] isEqualToString:ext] ) {
+                if( ![[thumbnail pathExtension] isEqualToString:ext] && lastPart != nil ) {
                     thumbnail = [thumbnail URLByAppendingPathComponent:lastPart];
                 }
             }
